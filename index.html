@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Triangulation Graph Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="left">
+      <canvas id="c"></canvas>
+    </div>
+    <div class="panel">
+      <h1>Triangulation Graph Editor</h1>
+      <div class="row modes">
+        <button id="mode-select" class="btn active">Select / Flip</button>
+        <button id="mode-addv" class="btn">Add Vertex</button>
+        <button id="mode-adde" class="btn">Add Edge</button>
+        <button id="mode-delete" class="btn">Delete</button>
+      </div>
+      <div class="row toolbar">
+        <button id="validate" class="btn">Validate Triangulation</button>
+        <button id="flip" class="btn">Flip Selected</button>
+        <button id="clear" class="btn">Clear Graph</button>
+      </div>
+
+      <div class="legend">
+        <div class="chip">● Vertex</div>
+        <div class="chip">— Edge</div>
+        <div class="chip">▱ Selected edge (cyan)</div>
+      </div>
+
+      <div class="list" id="status">Status: ready</div>
+
+      <div class="info">
+        <b>How to use</b>
+        <ul>
+          <li>Vertices are static once placed (they do not move).</li>
+          <li>Add vertex: choose <i>Add Vertex</i> and click on canvas.</li>
+          <li>Add edge: choose <i>Add Edge</i>, click two vertices.</li>
+          <li>Select edge: click an edge (Shift+click to multi-select non-interfering flippable edges).</li>
+          <li>Flip: select edges and press <i>Flip Selected</i> or press <kbd>F</kbd>.</li>
+          <li>Delete: choose <i>Delete</i> and click a vertex or edge to remove.</li>
+        </ul>
+        <div class="small">Flippable edge: must be shared by exactly two triangles (two distinct opposite vertices). Parallel flips cannot share a triangle, and their new edges must not conflict (no duplicate new edges or new edges that become two edges of the same triangle).</div>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"> </script>
+</body>
+</html>
