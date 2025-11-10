@@ -341,7 +341,8 @@ function seedSample(){
   // add some diagonals to triangulate
   addEdge(1,3); addEdge(1,4); addEdge(1,5); addEdge(3,5);
 }
-seedSample();
+// seedSample();
 
 // initial draw
+
 resize();
